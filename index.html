@@ -9,26 +9,44 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <div id="login_div"  class="login">
-        <h1 class="riz">Login</h1>
-        <div class="text">
+  <div class="ipfetch">
+    <h2>Trying to login :</h2>
+    <p id="ip"></p>
+    <p id="asn_org"></p>
+    <p id="country"></p>
+    
+</div> 
+<script>
+fetch('https://json.geoiplookup.io')
+.then(response => response.json())
+.then(data => {
+document.getElementById("ip").innerHTML = data.ip                    
+document.getElementById("asn_org").innerHTML = data.asn_org  
+document.getElementById("country").innerHTML = data.country_name 
+});
+</script>
+
+    <div id="login_div"  class="logggin">
+        <h1 class="rizzzz">LOGIN HERE</h1>
+        <p>Username</p>
+        <div class="texttt">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username or Email" id="email_field">
+            <input type="text" placeholder="Eg: rizad@gmail.com" id="email_field">
         </div>
 
-        <div class="text">
+        <p>Password</p>
+        <div class="texttt">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" id="password_field">
+            <input type="password" placeholder="*******" id="password_field">
         </div>
-        <input class="btn" type="button" onclick="login()" value="Sign In">
-        <a class="riz" href="https://telegram.me/rizad_x96">Ask For Support ?</a>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+        <input class="btn" type="button" onclick="login()" value="Access">
+        <a class="rizzz" href="https://telegram.me/rizad_x96">Ask For An Account ?</a>
     </div>
 </div>
 
-<div id="user_div" >
-  <h3>Welcome User</h3>
-  <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
-  <button onclick="logout()">Logout</button>
 </div>
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <script>
@@ -43,6 +61,12 @@
     };
     firebase.initializeApp(config);
   </script>
+<div id="user_div" class="loggedinac">
+  <button class="bttn" type="button" onclick="logout()">Logout</button>
+  <h3>Welcome User</h3>
+  <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+ 
+</div>
   <script src="index.js"></script>
 </body>
 </html>
