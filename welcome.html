@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome User</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="ipfetch">
+    <h2>Accessed from:</h2>
+    <p id="ip"></p>
+    <p id="asn_org"></p>
+    <p id="country"></p>
+    
+</div> 
+<script>
+fetch('https://json.geoiplookup.io')
+.then(response => response.json())
+.then(data => {
+document.getElementById("ip").innerHTML = data.ip                    
+document.getElementById("asn_org").innerHTML = data.asn_org  
+document.getElementById("country").innerHTML = data.country_name 
+});
+</script>
+</div>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAVwxFDEizgz-LqdbPzA24fz1L3Hjl1DFo",
+      authDomain: "loginfirbase-a73d6.firebaseapp.com",
+      databaseURL: "https://loginfirbase-a73d6.firebaseio.com",
+      projectId: "loginfirbase-a73d6",
+      storageBucket: "loginfirbase-a73d6.appspot.com",
+      messagingSenderId: "30186073976"
+    };
+    firebase.initializeApp(config);
+  </script>
+<div id="user_div" class="loggedinac">
+  <button class="bttn" type="button" onclick="logout()">Logout</button>
+  <h3>Hey User..,</h3>
+  <p>Welcome to web login Example. You're currently logged in succesfully.</p>
+
+<div class="timer">
+    <p id="demo"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+</div>
+  <script src="index.js"></script>
+</body>
+</html>
