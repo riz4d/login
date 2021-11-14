@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div id="login_div"  class="login">
+        <h1 class="riz">Login</h1>
+        <div class="text">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username or Email" id="email_field">
+        </div>
+
+        <div class="text">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" id="password_field">
+        </div>
+        <input class="btn" type="button" onclick="login()" value="Sign In">
+        <a class="riz" href="https://telegram.me/rizad_x96">Ask For Support ?</a>
+    </div>
+</div>
+
+<div id="user_div" >
+  <h3>Welcome User</h3>
+  <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+  <button onclick="logout()">Logout</button>
+</div>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAVwxFDEizgz-LqdbPzA24fz1L3Hjl1DFo",
+      authDomain: "loginfirbase-a73d6.firebaseapp.com",
+      databaseURL: "https://loginfirbase-a73d6.firebaseio.com",
+      projectId: "loginfirbase-a73d6",
+      storageBucket: "loginfirbase-a73d6.appspot.com",
+      messagingSenderId: "30186073976"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+</body>
+</html>
