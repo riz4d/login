@@ -1,1 +1,3 @@
 # login
+
+Simple Login template
